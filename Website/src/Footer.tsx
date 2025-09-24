@@ -1,9 +1,13 @@
+import React from "react";
 import "./Footer.css";
 import Thelogo from './assets/red_sea_construction_logo-removebg-preview.png';
+interface FooterProps {
+  
+}
 
-export default function Footer() {
+function Footer(props: FooterProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <div className="page">
+    <div className="page" ref={ref}>
       <footer className="footer">
         <div className="footer-grid">
           <div>
@@ -43,3 +47,6 @@ export default function Footer() {
     </div>
   );
 }
+const footer = React.forwardRef(Footer);
+
+export default footer;

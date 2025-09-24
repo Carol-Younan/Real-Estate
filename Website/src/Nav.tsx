@@ -13,11 +13,10 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import { useRef } from 'react';
 
 interface Props {
   window?: () => Window;
-  footerRef?: React.RefObject<HTMLDivElement>;
+  onContactClick?: () => void;
 }
 
 const drawerWidth = 240;
@@ -26,17 +25,11 @@ const navItems = ['Home', 'About Us','Projects','Careers', 'Contact'];
 
 
 export default function DrawerAppBar(props: Props) {
-    const { window: muiWindow } = props;
+    const { window: muiWindow , onContactClick } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const [scrolled, setScrolled] = React.useState(false);
 
-
-    const handleNavClick = (item: string) => {
-    if (item === 'Contact' && footerRef?.current) {
-      footerRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,9 +51,6 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
         <img src={Logo} alt="Red Sea Construction" />
-      {/* <Typography variant="h6" sx={{ my: 2 }}>
-        <>
-      </Typography> */}
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -76,12 +66,11 @@ export default function DrawerAppBar(props: Props) {
 
 const container = muiWindow !== undefined ? () => muiWindow().document.body : undefined;
 
-const footerRef = useRef<HTMLDivElement>(null);
-
-// const scrollToFooter = () => {
-//     footerRef.current?.scrollIntoView({ behavior: "smooth" });
-//     window.history.replaceState(null, "", window.location.pathname);
-//   };
+  const handleNavClick = (item: string) => {
+    if (item === 'Contact' && onContactClick) {
+      onContactClick();
+    }
+    };
 
   return (
     <Box sx={{ display: 'flex' }}>
