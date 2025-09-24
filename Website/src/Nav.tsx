@@ -13,13 +13,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { useRef } from 'react';
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
+  footerRef?: React.RefObject<HTMLDivElement>;
 }
 
 const drawerWidth = 240;
@@ -32,6 +30,13 @@ export default function DrawerAppBar(props: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const [scrolled, setScrolled] = React.useState(false);
+
+
+    const handleNavClick = (item: string) => {
+    if (item === 'Contact' && footerRef?.current) {
+      footerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +76,13 @@ export default function DrawerAppBar(props: Props) {
 
 const container = muiWindow !== undefined ? () => muiWindow().document.body : undefined;
 
+const footerRef = useRef<HTMLDivElement>(null);
+
+// const scrollToFooter = () => {
+//     footerRef.current?.scrollIntoView({ behavior: "smooth" });
+//     window.history.replaceState(null, "", window.location.pathname);
+//   };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -91,7 +103,9 @@ const container = muiWindow !== undefined ? () => muiWindow().document.body : un
           <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: "auto",marginRight:'100px' }}>
             {navItems.map((item) => (
                 <React.Fragment key={item}>
-              <Button sx={{ color: scrolled ? "black" : "white" , fontWeight:'bold',fontSize:'17px',marginRight:'15px',overflow: "hidden",
+              <Button 
+              onClick={() => handleNavClick(item)}
+              sx={{ color: scrolled ? "black" : "white" , fontWeight:'bold',fontSize:'17px',marginRight:'15px',overflow: "hidden",
               border:"none",
     "&::after": {
       content: '""',

@@ -3,7 +3,6 @@ import Info from './Info.js';
 import Box from '@mui/material/Box';
 import Projects from'./Projects.js';
 import Careers from './Careers.js';
-import Footer from './Footer.js';
 
 function Home(){
     return(
@@ -17,9 +16,6 @@ function Home(){
        </Box>
        <Box>
         <Careers/>
-       </Box>
-       <Box >
-        <Footer/>
        </Box>
        </>
     )
