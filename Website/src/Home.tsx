@@ -3,7 +3,7 @@ import Info from './Info.js';
 import Box from '@mui/material/Box';
 import Projects from'./Projects.js';
 import Careers from './Careers.js';
-import Footer from './footer.js';
+import Footer from './Footer.js';
 
 function Home(){
     return(
