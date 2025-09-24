@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 interface Props {
   window?: () => Window;
   onContactClick?: () => void;
+  OnHomeClick?: ()=>void;
 }
 
 const drawerWidth = 240;
@@ -25,7 +26,7 @@ const navItems = ['Home', 'About Us','Projects','Careers', 'Contact'];
 
 
 export default function DrawerAppBar(props: Props) {
-    const { window: muiWindow , onContactClick } = props;
+    const { window: muiWindow , onContactClick , OnHomeClick } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const [scrolled, setScrolled] = React.useState(false);
@@ -70,7 +71,12 @@ const container = muiWindow !== undefined ? () => muiWindow().document.body : un
     if (item === 'Contact' && onContactClick) {
       onContactClick();
     }
+    else if (item === 'Home' && OnHomeClick){
+      OnHomeClick();
+    }
     };
+
+
 
   return (
     <Box sx={{ display: 'flex' }}>
