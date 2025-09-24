@@ -1,0 +1,39 @@
+ :root{
+  background-color: rgb(224, 225, 227);
+  width: 100%;
+}
+body {
+  overflow-x: hidden;  
+  overflow-y: auto;   
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+}
+/* .logo-container {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 20px;      
+} */
+/*
+.Nav{
+  position: fixed;         
+  left: 0;
+ width: 100vw;
+  height: 110px;            
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;   
+  padding: 0 20px;   
+  z-index: 1000;       
+}
+.buttons{
+  
+  Right: 800px;
+}
+.caro{
+  background-color: transparent;
+} */

@@ -1,0 +1,11 @@
+.the-overlay-card {    /* center horizontally */
+  position: absolute;
+  top:25%;
+  left:25%;
+  background: rgba(0, 0, 0, 0.8); /* semi-transparent white */
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2;
+}

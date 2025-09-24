@@ -1,0 +1,38 @@
+.head {
+  width: 100%;
+  height: 100vh;       /* يخلي الصورة تاخد طول الشاشة */
+  position: relative;
+  overflow: hidden;
+}
+
+.TheHead {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;   
+  display: block;
+  z-index: 1;        
+  position: relative;
+}
+.overlay-card {
+  position: absolute;
+  top: 70%;      /* center vertically */
+  left: 20%;     /* center horizontally */
+  max-width: 400px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.586); /* semi-transparent white */
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.overlay-card h2 {
+  margin: 0;
+  color: #0047AB;
+}
+
+.overlay-card p {
+  margin-top: 8px;
+  color: #ffffff;
+}
