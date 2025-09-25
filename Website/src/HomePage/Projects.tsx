@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import Img from './assets/ConfSlider.jpg';
+import CONFIG from '../Config';
 
 interface StatData {
   image: string;
@@ -33,18 +33,8 @@ function StatCard({ stat }: { stat: StatData }) {
 }
 
 export default function Projects() {
-const stats: StatData[] = [
-  { image: Img, header: "Hotels & Resorts" },
-  { image: Img, header: "Administrative Buildings" },
-  { image: Img, header: "Real Estate" },
-  { image: Img, header: "Industrial Buildings" },
-  { image: Img, header: "Educational Institutes" },
-  { image: Img, header: "Golf Course, Marinas & Lagoons" },
-  { image: Img, header: "Sports & Entertainment" },
-  { image: Img, header: "Facilities" },
-  { image: Img, header: "Infrastructure, Landscape & Roads" },
-  { image: Img, header: "Retail" },
-];
+
+  const [stats, setStats] = useState<StatData[]>([]);
 
   const innerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -52,6 +42,12 @@ const stats: StatData[] = [
 
   const step = 320; 
 
+  useEffect(() => {
+    fetch(CONFIG.PROJECTS_URL) 
+      .then((res) => res.json())
+      .then((data) => setStats(data))
+      .catch((err) => console.error("Error loading projects:", err));
+  }, []);
 
   const repeatedStats = [...stats, ...stats, ...stats, ...stats, ...stats];
 

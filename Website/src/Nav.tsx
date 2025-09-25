@@ -25,16 +25,24 @@ export default function DrawerAppBar(props: Props) {
 
 const navigate = useNavigate();
 
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
+  { label: "Projects", path: "/projects" },
+  { label: "Careers", path: "/careers" },
+  { label: "Contact", path: "contact" }, // ده للسكروول عالفوتر
+];
 
-  const handleNavClick = (item: string) => {
-    if (item === 'Contact' && onContactClick) {
-      onContactClick();
-    }
-    else if (item === 'Home'){
-      navigate("/");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  };
+  const handleNavClick = (label: string, path?: string) => {
+    if (label === "Contact" && onContactClick) {
+    onContactClick();
+    return;
+  }
+   if (path) {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -67,10 +75,10 @@ const navigate = useNavigate();
           </IconButton>
           <img className='logo' src={Logo} onClick={() => handleNavClick('Home')} alt="Red Sea Construction" style={{cursor:"pointer", height:scrolled?"60px":"100px",width:scrolled?"60px":"100px",transition:"all 0.3s ease"}} />
           <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: "auto",marginRight:'100px' }}>
-            {navItems.map((item) => (
-                <React.Fragment key={item}>
+            {navItems.map(({ label, path })  => (
               <Button 
-              onClick={() => handleNavClick(item)}
+              key={label}
+              onClick={() => handleNavClick(label, path)}
               sx={{ color: scrolled ? "black" : "white" , fontWeight:'bold',fontSize:'17px',marginRight:'15px',overflow: "hidden",
               border:"none",
     "&::after": {
@@ -95,10 +103,8 @@ const navigate = useNavigate();
       outline: "none",
       boxShadow: "none",
     },}}>
-                {item}
+                {label}
               </Button>
-            
-        </React.Fragment>
             ))}
           </Box>
         </Toolbar>

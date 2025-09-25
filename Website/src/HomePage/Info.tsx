@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import WhoWeAre from './assets/WhoWeAre.jpg';
+import WhoWeAre from '../assets/WhoWeAre.jpg';
 import AnimatedStatsCounter from './Numbers';
 
 export default function BasicGrid() {

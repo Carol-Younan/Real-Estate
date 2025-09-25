@@ -1,4 +1,4 @@
-import Img from './assets/2.jpg';
+import Img from '../assets/2.jpg';
 import './Career.css';
 
 export default function Careers() {

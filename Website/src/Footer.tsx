@@ -16,10 +16,9 @@ function Footer(props: FooterProps, ref: React.Ref<HTMLDivElement>) {
           <div>
             <h3>Company</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
+              <li><a href="/about">About Us</a></li>
               <li><a href="#">Projects</a></li>
               <li><a href="#">Career</a></li>
-              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
 
