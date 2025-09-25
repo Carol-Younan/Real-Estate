@@ -7,15 +7,22 @@ import Footer from './Footer';
 
 function App() {
   const footerRef = useRef<HTMLDivElement>(null);
+  // const topRef = useRef<HTMLDivElement>(null); 
 
     const handleContactClick = () => {
     footerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // const handleHomeClick = ()=>{
+  //   topRef.current?.scrollIntoView({behavior:"smooth"});
+  // }
+
+
   return (
     <>
+    {/* <div ref={topRef}></div> */}
     <BrowserRouter>
-      <Nav onContactClick={handleContactClick}/>
+      <Nav onContactClick={handleContactClick} />
       <Routes>
         <Route path='/' element= {<Home/>} />
 

@@ -3,34 +3,38 @@ import Logo from './assets/red_sea_construction_logo-removebg-preview.png'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom"; 
 
 interface Props {
   window?: () => Window;
   onContactClick?: () => void;
-  OnHomeClick?: ()=>void;
+  OnHomeClick?:()=>void;
 }
-
-const drawerWidth = 240;
 const navItems = ['Home', 'About Us','Projects','Careers', 'Contact'];
 
 
 
 export default function DrawerAppBar(props: Props) {
-    const { window: muiWindow , onContactClick , OnHomeClick } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { onContactClick } = props;
 
     const [scrolled, setScrolled] = React.useState(false);
 
+const navigate = useNavigate();
+
+
+  const handleNavClick = (item: string) => {
+    if (item === 'Contact' && onContactClick) {
+      onContactClick();
+    }
+    else if (item === 'Home'){
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -45,38 +49,6 @@ export default function DrawerAppBar(props: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-        <img src={Logo} alt="Red Sea Construction" />
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-const container = muiWindow !== undefined ? () => muiWindow().document.body : undefined;
-
-  const handleNavClick = (item: string) => {
-    if (item === 'Contact' && onContactClick) {
-      onContactClick();
-    }
-    else if (item === 'Home' && OnHomeClick){
-      OnHomeClick();
-    }
-    };
-
-
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -89,12 +61,11 @@ const container = muiWindow !== undefined ? () => muiWindow().document.body : un
             color="inherit"
             aria-label="open drawer"
             edge="start"
-            onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <img className='logo' src={Logo} alt="Red Sea Construction" style={{height:scrolled?"60px":"100px",width:scrolled?"60px":"100px",transition:"all 0.3s ease"}} />
+          <img className='logo' src={Logo} onClick={() => handleNavClick('Home')} alt="Red Sea Construction" style={{cursor:"pointer", height:scrolled?"60px":"100px",width:scrolled?"60px":"100px",transition:"all 0.3s ease"}} />
           <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: "auto",marginRight:'100px' }}>
             {navItems.map((item) => (
                 <React.Fragment key={item}>
@@ -132,23 +103,25 @@ const container = muiWindow !== undefined ? () => muiWindow().document.body : un
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
+      </Box>
+)
+}
+      {/* <nav>
         <Drawer
           container={container}
           variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box'},
           }}
         >
           {drawer}
         </Drawer>
       </nav>
-    </Box>
-  );
-}
+//     </Box> */}
+{/* //   );
+//   }
+// } */}
