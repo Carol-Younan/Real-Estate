@@ -29,7 +29,7 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Projects", path: "/projects" },
-  { label: "Careers", path: "/careers" },
+  { label: "Career", path: "/career" },
   { label: "Contact", path: "contact" }, // ده للسكروول عالفوتر
 ];
 

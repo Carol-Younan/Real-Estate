@@ -5,6 +5,7 @@ import Home from './HomePage/Home';
 import { useRef } from 'react';
 import About from './About';
 import Footer from './Footer';
+import Career from './CareerPage/Career';
 
 function App() {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element= {<Home/>} />
         <Route path='/about' element= {<About/>} />
+        <Route path='/career' element= {<Career/>} />
       </Routes>
     </BrowserRouter>
     <Footer ref={footerRef} />
