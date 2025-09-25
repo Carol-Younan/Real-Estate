@@ -3,6 +3,7 @@ import './App.css'
 import Nav from './Nav';
 import Home from './Home';
 import { useRef } from 'react';
+import About from './About';
 import Footer from './Footer';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Nav onContactClick={handleContactClick} />
       <Routes>
         <Route path='/' element= {<Home/>} />
-
+        <Route path='/about' element= {<About/>} />
       </Routes>
     </BrowserRouter>
     <Footer ref={footerRef} />
