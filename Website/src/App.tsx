@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import About from './About';
 import Footer from './Footer';
 import Career from './CareerPage/Career';
+import Categories from './ProjectPage/Categories';
 
 function App() {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ function App() {
         <Route path='/' element= {<Home/>} />
         <Route path='/about' element= {<About/>} />
         <Route path='/career' element= {<Career/>} />
+        <Route path='/projects' element= {<Categories/>} />
       </Routes>
     </BrowserRouter>
     <Footer ref={footerRef} />

@@ -6,7 +6,7 @@ const About: React.FC = () => {
   return (
     <div className="about-container">
       {/* Hero Section */}
-      <div className="about-hero" style={{ backgroundImage: `url(${heroImg})` }}>
+      <div className="about-hero" style={{ backgroundImage: `url(${heroImg})`  }}>
         <div className="about-title">
           <h1>About Us</h1>
           <p className="subtitle">Building excellence for over 25 years</p>
