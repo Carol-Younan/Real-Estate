@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .CareerHead {
   width: 100%;
   height: 80vh;
@@ -12,7 +15,7 @@
 
 .CareerContent {
   max-width: 800px;
-  margin: 20px auto;  /* centered below the image */
+  margin: 20px auto; 
   padding: 0 20px;
   text-align: center;
 }
@@ -34,4 +37,19 @@
   line-height: 1.6;
   color: #444;
   margin-top: 0;
+}
+
+.job-card{
+  position: relative;
+}
+
+.details-button{
+  position: absolute;
+  bottom: 20px;
+}
+
+.Apply-button{
+  position: absolute;
+  bottom: 20px;
+  left: 140px;
 }

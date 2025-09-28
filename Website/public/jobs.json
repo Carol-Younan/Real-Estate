@@ -1,0 +1,108 @@
+[
+    {
+        "position": "IT Help Desk",
+        "vacancies": 2,
+        "title": "Help Desk",
+        "locations": [
+            "Giza"
+        ],
+        "status": "Active",
+        "description": "Provide technical support to employees by troubleshooting hardware, software, and network issues. Assist users with system access, installations, and day-to-day IT needs.",
+        "responsibilities": [
+            "Respond to IT help requests via phone, email, or ticketing system.",
+            "Diagnose and resolve technical issues in a timely manner.",
+            "Install and configure software, hardware, and peripherals.",
+            "Escalate unresolved issues to higher-level IT staff.",
+            "Maintain documentation of support requests and solutions."
+        ]
+    },
+    {
+        "position": "Senior Planning Engineer",
+        "vacancies": 3,
+        "title": "Senior Planning Engineer",
+        "locations": [
+            "EL Gouna",
+            "5th Settlement",
+            "North Coast"
+        ],
+        "status": "Active",
+        "description": "Responsible for preparing, monitoring, and updating project schedules to ensure timely execution of construction projects. Coordinate with project managers and site teams to align progress with baseline schedules.",
+        "responsibilities": [
+            "Develop detailed project schedules using appropriate planning tools.",
+            "Monitor actual progress and compare it against planned timelines.",
+            "Identify potential delays and propose corrective actions.",
+            "Prepare progress reports for management and stakeholders.",
+            "Ensure compliance with contractual project milestones."
+        ]
+    },
+    {
+        "position": "Tendering Engineer",
+        "vacancies": 2,
+        "title": "Tendering Engineer",
+        "locations": [
+            "Giza"
+        ],
+        "status": "Active",
+        "description": "Handle the preparation and submission of technical and financial proposals for new projects. Review tender documents and ensure all requirements are met to maximize the chance of winning bids.",
+        "responsibilities": [
+            "Study tender documents and identify project requirements.",
+            "Prepare cost estimates, BOQs, and technical proposals.",
+            "Coordinate with different departments to gather necessary data.",
+            "Ensure tenders are submitted within deadlines and meet client specifications.",
+            "Participate in negotiations and clarification meetings with clients."
+        ]
+    },
+     {
+        "position": "IT Help Desk",
+        "vacancies": 2,
+        "title": "Help Desk",
+        "locations": [
+            "Giza"
+        ],
+        "status": "Active",
+        "description": "Provide technical support to employees by troubleshooting hardware, software, and network issues. Assist users with system access, installations, and day-to-day IT needs.",
+        "responsibilities": [
+            "Respond to IT help requests via phone, email, or ticketing system.",
+            "Diagnose and resolve technical issues in a timely manner.",
+            "Install and configure software, hardware, and peripherals.",
+            "Escalate unresolved issues to higher-level IT staff.",
+            "Maintain documentation of support requests and solutions."
+        ]
+    },
+    {
+        "position": "Senior Planning Engineer",
+        "vacancies": 3,
+        "title": "Senior Planning Engineer",
+        "locations": [
+            "EL Gouna",
+            "5th Settlement",
+            "North Coast"
+        ],
+        "status": "Active",
+        "description": "Responsible for preparing, monitoring, and updating project schedules to ensure timely execution of construction projects. Coordinate with project managers and site teams to align progress with baseline schedules.",
+        "responsibilities": [
+            "Develop detailed project schedules using appropriate planning tools.",
+            "Monitor actual progress and compare it against planned timelines.",
+            "Identify potential delays and propose corrective actions.",
+            "Prepare progress reports for management and stakeholders.",
+            "Ensure compliance with contractual project milestones."
+        ]
+    },
+    {
+        "position": "Tendering Engineer",
+        "vacancies": 2,
+        "title": "Tendering Engineer",
+        "locations": [
+            "Giza"
+        ],
+        "status": "Active",
+        "description": "Handle the preparation and submission of technical and financial proposals for new projects. Review tender documents and ensure all requirements are met to maximize the chance of winning bids.",
+        "responsibilities": [
+            "Study tender documents and identify project requirements.",
+            "Prepare cost estimates, BOQs, and technical proposals.",
+            "Coordinate with different departments to gather necessary data.",
+            "Ensure tenders are submitted within deadlines and meet client specifications.",
+            "Participate in negotiations and clarification meetings with clients."
+        ]
+    }
+]
