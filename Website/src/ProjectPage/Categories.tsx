@@ -2,6 +2,7 @@ import './Categories.css'
 import { useEffect ,useState } from 'react';
 import CONFIG from '../Config';
 import Logo from '../assets/red_sea_construction_logo-removebg-preview.png';
+import bg from '../assets/bg.jpg';
 
 interface StatData {
   image: string;
@@ -21,26 +22,42 @@ function Categories() {
   }, []);
 
 return (
-  <div className="cards-grid">
-    {stats.map((stat, index) => (
-      <div className="card" key={index}>
-        <div
-          className="content"
-          style={{
-            backgroundImage: `url(${stat.image})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center'
-          }}
-        >
-          <img src={Logo} alt="Logo" className="icon" style={{width: '60px', height: '60px'}} />
-          <p className="para">
-            {stat.header}
-          </p>
-        </div>
+  <>
+  <div className='head-cat'>
+      <img src={bg} className='img-cat'/>
       </div>
-    ))}
-  </div>
+ <div className="cards-grid">
+  {stats.map((stat, index) => (
+    <div className="card" key={index}>
+      <div
+        className="content"
+        style={{
+          backgroundImage: `url(${stat.image})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
+        }}
+      >
+        <img
+          src={Logo}
+          alt="Logo"
+          className="icon"
+          style={{
+            width: '60px',
+            height: '60px',
+            position: 'absolute',
+            top: '5%',
+            left: '5%'
+          }}
+        />
+      </div>
+      <p className="card-title">{stat.header}</p>
+    </div>
+  ))}
+</div>
+
+
+  </>
 );
 }
 

@@ -14,7 +14,6 @@ interface Props {
   onContactClick?: () => void;
   OnHomeClick?:()=>void;
 }
-const navItems = ['Home', 'About Us','Projects','Careers', 'Contact'];
 
 
 
@@ -73,7 +72,7 @@ const navItems = [
           >
             <MenuIcon />
           </IconButton>
-          <img className='logo' src={Logo} onClick={() => handleNavClick('Home')} alt="Red Sea Construction" style={{cursor:"pointer", height:scrolled?"60px":"100px",width:scrolled?"60px":"100px",transition:"all 0.3s ease"}} />
+          <img className='logo' src={Logo} onClick={() => handleNavClick("Home",' ')} alt="Red Sea Construction" style={{cursor:"pointer", height:scrolled?"60px":"100px",width:scrolled?"60px":"100px",transition:"all 0.3s ease"}} />
           <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: "auto",marginRight:'100px' }}>
             {navItems.map(({ label, path })  => (
               <Button 

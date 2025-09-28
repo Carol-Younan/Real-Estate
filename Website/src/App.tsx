@@ -3,7 +3,7 @@ import './App.css'
 import Nav from './Nav';
 import Home from './HomePage/Home';
 import { useRef } from 'react';
-import About from './About';
+import About from './AboutPage/About';
 import Footer from './Footer';
 import Career from './CareerPage/Career';
 import Categories from './ProjectPage/Categories';

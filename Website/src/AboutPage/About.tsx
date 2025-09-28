@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import heroImg from './assets/Career2.jpg'; // adjust path if needed
+import heroImg from '../assets/Career2.jpg'; // adjust path if needed
 
 const About: React.FC = () => {
   return (

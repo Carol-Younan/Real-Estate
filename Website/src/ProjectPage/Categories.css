@@ -1,37 +1,50 @@
+
 .card {
   position: relative;
   display: flex;
+  flex-direction: column;   
   align-items: center;
-  justify-content: center;
-  width: 220px;
+  justify-content: flex-start;
+  width: 220px;            
   border-radius: 24px;
-  line-height: 1.6;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.card-title {
+	color: #0047AB;
+  font-size: 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-align: center;
+  background: linear-gradient(90deg,#000000,#0047AB);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+.img-cat{
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+  object-position:top;
+  
+}
+
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  position: relative;
   width: 220px;
-    height: 220px;
-  gap: 24px;
-  padding: 36px;
+  height: 220px;
   border-radius: 22px;
-  /* background-image: url('../assets/ConfSlider.jpg'); */
-  background-size: cover;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .content::before {
   position: absolute;
   content: "";
-  top: -4%;
+  top: 8%;
   left: 50%;
   width: 90%;
   height: 90%;
-  transform: translate(-50%);
-  background: #ced8ff;
+  transform: translate(-52%);
+  background: #646464;
   z-index: -1;
   transform-origin: bottom;
 
@@ -47,7 +60,7 @@
   width: 80%;
   height: 80%;
   transform: translate(-50%);
-  background: #e7ecff;
+  background: #91949d;
   z-index: -2;
   transform-origin: bottom;
   border-radius: inherit;
@@ -57,26 +70,6 @@
 .content svg {
   width: 48px;
   height: 48px;
-}
-
-.content .para {
-  z-index: 1;
-  opacity: 1;
-  font-size: 18px;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.content .link {
-  z-index: 1;
-  color: #fea000;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 16px;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.content .link:hover {
-  text-decoration: underline;
 }
 
 .card:hover {
@@ -108,8 +101,8 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(3, 300px);
+  gap: 60px;
   justify-items: center;
   margin: 40px auto;
   max-width: 1100px;

@@ -1,7 +1,15 @@
 import Img from '../assets/2.jpg';
 import './Career.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Careers() {
+  const navigate=useNavigate();
+  const handleNavClick = (label: string) => {
+   if (label==="Career") {
+    navigate("/career");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
   return (
     
     <section
@@ -66,6 +74,7 @@ export default function Careers() {
                   margin:"auto",
                   transition: "all 0.3s ease",
                 }}
+                onClick={() => handleNavClick("Career")}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background =
                     "linear-gradient(135deg, #2980b9, #1f5f99)";
