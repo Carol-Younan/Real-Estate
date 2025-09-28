@@ -101,7 +101,7 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 60px;
   justify-items: center;
   margin: 40px auto;
