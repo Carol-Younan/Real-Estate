@@ -1,7 +1,7 @@
-import React from 'react';
-import './About.css';
-import heroImg from '../assets/Career2.jpg';
-import historyImg from '../assets/history.jpg';
+import React from "react";
+import "./About.css";
+import heroImg from "../assets/Career2.jpg";
+import historyImg from "../assets/history.jpg";
 
 const About: React.FC = () => {
   return (
@@ -20,17 +20,18 @@ const About: React.FC = () => {
         <div className="about-history-grid">
           <div className="history-text">
             <p>
-              For more than 25 years, the Construction sector of Orascom Development
-              carried out in-house construction works across all its projects in
-              Egypt and abroad. In 2010, Red Sea Construction was established as a
-              standalone entity to handle Orascom Development's construction projects
-              and expand into the open market.
+              For more than 25 years, the Construction sector of Orascom
+              Development carried out in-house construction works across all its
+              projects in Egypt and abroad. In 2010, Red Sea Construction was
+              established as a standalone entity to handle Orascom Development's
+              construction projects and expand into the open market.
             </p>
             <p>
-              With over 1,500 highly trained staff, Red Sea Construction has delivered
-              landmark hotels, marinas, real estate, educational institutions, medical
-              centers, golf courses, ministerial buildings, and major infrastructure
-              projects in Egypt, Oman, Montenegro, and Morocco.
+              With over 1,500 highly trained staff, Red Sea Construction has
+              delivered landmark hotels, marinas, real estate, educational
+              institutions, medical centers, golf courses, ministerial
+              buildings, and major infrastructure projects in Egypt, Oman,
+              Montenegro, and Morocco.
             </p>
           </div>
           <div className="history-image">
@@ -55,34 +56,52 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="about-section fade-in">
-        <h2>Our Values</h2>
-        <ul className="values-list">
-          <li>
-            <strong>Excellence:</strong> We are committed to doing the right thing
-            with excellence in all activities, always striving for distinction.
-          </li>
-          <li>
-            <strong>Quality:</strong> Our clients are at the heart of our business.
-            We deliver the highest quality standards, always on time.
-          </li>
-          <li>
-            <strong>Commitment:</strong> We go the extra mile to achieve results,
-            creating an environment where our employees can grow to their full
-            potential.
-          </li>
-          <li>
-            <strong>Integrity:</strong> We act with honesty, transparency, and
-            fairness with all stakeholders, adhering to laws, regulations, and
-            ethical practices.
-          </li>
-          <li>
-            <strong>Loyalty & Teamwork:</strong> We succeed as a team, empowering
-            our people and building on collective strengths.
-          </li>
-        </ul>
-      </section>
+{/* Values Section */}
+<section className="about-section fade-in">
+  <h2>Our Core Values</h2>
+  <p className="section-subtitle">
+    The foundation of everything we build
+  </p>
+  <div className="values-grid">
+    {[
+      {
+        title: "Excellence",
+        text: "We are committed to doing the right thing with excellence in all activities, always striving for distinction.",
+      },
+      {
+        title: "Quality",
+        text: "Our clients are at the heart of our business. We deliver the highest quality standards, always on time.",
+      },
+      {
+        title: "Commitment",
+        text: "We go the extra mile to achieve results, creating an environment where our employees can grow to their full potential.",
+      },
+      {
+        title: "Integrity",
+        text: "We act with honesty, transparency, and fairness with all stakeholders, adhering to laws, regulations, and ethical practices.",
+      },
+      {
+        title: "Teamwork",
+        text: "We succeed as a team, empowering our people and building on collective strengths.",
+      },
+    ].map((value, index) => (
+      <div key={index} className="value-card">
+        <div className="value-card-inner">
+          {/* Front Side */}
+          <div className="value-card-front">
+            <h3>{value.title}</h3>
+          </div>
+          {/* Back Side */}
+          <div className="value-card-back">
+            <h3>{value.title}</h3>
+            <p>{value.text}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Vision & Mission Section */}
       <section className="about-section fade-in">
@@ -91,19 +110,20 @@ const About: React.FC = () => {
           <div className="vision-card">
             <h3>Vision</h3>
             <p>
-              To share our culture of excellence and perfection with a broader client
-              base, building on a long history of superior quality. To be recognized
-              as the best-in-class engineering and construction company for work
-              methods, technology, and human resource competence.
+              To share our culture of excellence and perfection with a broader
+              client base, building on a long history of superior quality. To be
+              recognized as the best-in-class engineering and construction
+              company for work methods, technology, and human resource
+              competence.
             </p>
           </div>
           <div className="mission-card">
             <h3>Mission</h3>
             <p>
-              To provide our clients with superior levels of quality construction and
-              engineering services, while maintaining the highest standards of
-              quality, integrity, honesty, and commitment in our relationships with
-              clients, subcontractors, and suppliers.
+              To provide our clients with superior levels of quality
+              construction and engineering services, while maintaining the
+              highest standards of quality, integrity, honesty, and commitment
+              in our relationships with clients, subcontractors, and suppliers.
             </p>
           </div>
         </div>
