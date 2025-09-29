@@ -1,32 +1,58 @@
 import React from 'react';
 import './About.css';
-import heroImg from '../assets/Career2.jpg'; // adjust path if needed
+import heroImg from '../assets/Career2.jpg';
+import historyImg from '../assets/history.jpg';
 
 const About: React.FC = () => {
   return (
     <div className="about-container">
       {/* Hero Section */}
-      <div className="about-hero" style={{ backgroundImage: `url(${heroImg})`  }}>
+      <div className="about-hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="about-title">
           <h1>About Us</h1>
           <p className="subtitle">Building excellence for over 25 years</p>
-          </div>
+        </div>
       </div>
 
       {/* History Section */}
       <section className="about-section fade-in">
         <h2>Our History</h2>
-        <p>
-          For more than 25 years, the Construction sector of Orascom Development
-          carried out in-house construction works across all its projects in
-          Egypt and abroad. In 2010, Red Sea Construction was established as a
-          standalone entity to handle Orascom Development’s construction projects
-          and expand into the open market. With over 1,500 highly trained staff,
-          Red Sea Construction has delivered landmark hotels, marinas, real
-          estate, educational institutions, medical centers, golf courses,
-          ministerial buildings, and major infrastructure projects in Egypt,
-          Oman, Montenegro, and Morocco.
-        </p>
+        <div className="about-history-grid">
+          <div className="history-text">
+            <p>
+              For more than 25 years, the Construction sector of Orascom Development
+              carried out in-house construction works across all its projects in
+              Egypt and abroad. In 2010, Red Sea Construction was established as a
+              standalone entity to handle Orascom Development's construction projects
+              and expand into the open market.
+            </p>
+            <p>
+              With over 1,500 highly trained staff, Red Sea Construction has delivered
+              landmark hotels, marinas, real estate, educational institutions, medical
+              centers, golf courses, ministerial buildings, and major infrastructure
+              projects in Egypt, Oman, Montenegro, and Morocco.
+            </p>
+          </div>
+          <div className="history-image">
+            <img src={historyImg} alt="Orascom Development history" />
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="stats-section">
+          <div className="stat-item fade-in">
+            <div className="stat-number">25+</div>
+            <div className="stat-label">Years of Experience</div>
+          </div>
+          <div className="stat-item fade-in">
+            <div className="stat-number">1,500+</div>
+            <div className="stat-label">Trained Staff</div>
+          </div>
+          <div className="stat-item fade-in">
+            <div className="stat-number">4</div>
+            <div className="stat-label">Countries</div>
+          </div>
+        </div>
       </section>
 
       {/* Values Section */}
@@ -58,26 +84,29 @@ const About: React.FC = () => {
         </ul>
       </section>
 
-      {/* Vision Section */}
+      {/* Vision & Mission Section */}
       <section className="about-section fade-in">
-        <h2>Vision</h2>
-        <p>
-          To share our culture of excellence and perfection with a broader client
-          base, building on a long history of superior quality. To be recognized
-          as the best-in-class engineering and construction company for work
-          methods, technology, and human resource competence.
-        </p>
-      </section>
-
-      {/* Mission Section */}
-      <section className="about-section fade-in">
-        <h2>Mission</h2>
-        <p>
-          To provide our clients with superior levels of quality construction and
-          engineering services, while maintaining the highest standards of
-          quality, integrity, honesty, and commitment in our relationships with
-          clients, subcontractors, and suppliers.
-        </p>
+        <h2>Our Vision & Mission</h2>
+        <div className="vision-mission-grid">
+          <div className="vision-card">
+            <h3>Vision</h3>
+            <p>
+              To share our culture of excellence and perfection with a broader client
+              base, building on a long history of superior quality. To be recognized
+              as the best-in-class engineering and construction company for work
+              methods, technology, and human resource competence.
+            </p>
+          </div>
+          <div className="mission-card">
+            <h3>Mission</h3>
+            <p>
+              To provide our clients with superior levels of quality construction and
+              engineering services, while maintaining the highest standards of
+              quality, integrity, honesty, and commitment in our relationships with
+              clients, subcontractors, and suppliers.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
