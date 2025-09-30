@@ -2,7 +2,6 @@ import './Categories.css'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CONFIG from '../Config';
-import Logo from '../assets/red_sea_construction_logo-removebg-preview.png';
 import bg from '../assets/bg.jpg';
 
 interface StatData {
@@ -22,7 +21,6 @@ function Categories() {
   }, []);
 
   const handleCardClick = (categoryName: string) => {
-    // Navigate to projects page with category name
     navigate(`/projects/${encodeURIComponent(categoryName)}`);
   };
 
@@ -50,20 +48,14 @@ function Categories() {
                   style={{
                     backgroundImage: `url(${stat.image})`,
                   }}
-                >
-                  <img
-                    src={Logo}
-                    alt="Logo"
-                    className="icon"
-                  />
-                </div>
+                ></div>
               </div>
               
               {/* Back Face */}
               <div className="card-back"></div>
             </div>
             
-            {/* Title Below */}
+            {/* Title Always Under Card */}
             <p className="card-title">{stat.header}</p>
           </div>
         ))}
