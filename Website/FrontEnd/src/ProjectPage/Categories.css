@@ -79,13 +79,14 @@
   z-index: 10;
 }
 .card:hover .card-title {
-  bottom: 100%; /* يطلع فوق الكارت */
-   transform: translateY(-160px);
-  color: white;
+  transform: translateY(-160px);
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 18px;
   background-clip: text;
   font-weight: 700;
-  z-index: 10;
+  
 }
  /* Front and Back Faces */
 .card-front,

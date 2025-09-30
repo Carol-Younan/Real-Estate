@@ -94,8 +94,7 @@ function Footer(props: FooterProps, ref: React.Ref<HTMLDivElement>) {
             <ul>
               <li><a href="/about">About Us</a></li>
               <li><a href="/projects">Projects</a></li>
-              <li><a href="/careers">Careers</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/career">Careers</a></li>
             </ul>
           </div>
 
