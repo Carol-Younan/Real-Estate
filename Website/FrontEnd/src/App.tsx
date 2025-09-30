@@ -26,7 +26,6 @@ function App() {
 
   return (
     <>
-    {/* <div ref={topRef}></div> */}
     <BrowserRouter>
       <ScrollToTop/>
       <Nav onContactClick={handleContactClick} />
@@ -43,5 +42,7 @@ function App() {
     </>
   )
 }
+
+    {/* <div ref={topRef}></div> */}
 
 export default App

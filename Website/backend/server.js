@@ -8,28 +8,10 @@ require('dotenv').config();
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// ======== CORS بسيط ========
+app.use(cors());
 
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ 
-    success: true, 
-    message: 'Server is running'
-  });
-});
-// CORS Configuration - MUST BE FIRST
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
-// // Handle preflight requests
-// app.options('*', cors());
-
-// Middleware
+// ======== Middleware ========
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
@@ -114,7 +96,7 @@ const applicationSchema = new mongoose.Schema({
 
 const Application = mongoose.model('Application', applicationSchema);
 
-// Routes
+// ======== Routes ========
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -128,11 +110,8 @@ app.get('/api/health', (req, res) => {
 // Submit Application
 app.post('/api/applications', upload.single('cv'), async (req, res) => {
   console.log('📥 POST /api/applications - Request received');
-  console.log('📋 Body:', req.body);
-  console.log('📎 File:', req.file ? 'File received' : 'No file');
-
+  
   try {
-    // Check if file exists
     if (!req.file) {
       console.log('❌ No file uploaded');
       return res.status(400).json({ 
@@ -142,11 +121,11 @@ app.post('/api/applications', upload.single('cv'), async (req, res) => {
     }
 
     const { fullName, email, phone } = req.body;
+    console.log('📋 Received data:', { fullName, email, phone });
 
-    // Validate required fields
     if (!fullName || !email || !phone) {
       console.log('❌ Missing required fields');
-      if (req.file && fs.existsSync(req.file.path)) {
+      if (fs.existsSync(req.file.path)) {
         fs.unlinkSync(req.file.path);
       }
       return res.status(400).json({ 
@@ -164,42 +143,25 @@ app.post('/api/applications', upload.single('cv'), async (req, res) => {
       cvOriginalName: req.file.originalname
     });
 
-    // Save to database
     const savedApplication = await application.save();
-    console.log('✅ Application saved successfully:', savedApplication._id);
+    console.log('✅ Application saved to DB:', savedApplication._id);
 
-    // Send success response
-    const responseData = {
+    // Response
+    res.status(200).json({
       success: true,
-      message: 'Application submitted successfully',
-      data: {
-        id: savedApplication._id.toString(),
-        fullName: savedApplication.fullName,
-        email: savedApplication.email,
-        submittedAt: savedApplication.submittedAt.toISOString()
-      }
-    };
-
-    console.log('📤 Sending response:', responseData);
-    return res.status(201).json(responseData);
+      message: 'Application submitted successfully'
+    });
 
   } catch (error) {
-    console.error('❌ Error submitting application:', error);
+    console.error('❌ Server error:', error);
     
-    // Delete uploaded file if error occurs
     if (req.file && fs.existsSync(req.file.path)) {
-      try {
-        fs.unlinkSync(req.file.path);
-        console.log('🗑️ Deleted uploaded file due to error');
-      } catch (unlinkError) {
-        console.error('Error deleting file:', unlinkError);
-      }
+      fs.unlinkSync(req.file.path);
     }
     
-    return res.status(500).json({
+    res.status(500).json({
       success: false,
-      message: 'Failed to submit application',
-      error: error.message
+      message: 'Server error: ' + error.message
     });
   }
 });
@@ -340,6 +302,7 @@ app.use((req, res) => {
   });
 });
 
+// ======== Start Server ========
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);

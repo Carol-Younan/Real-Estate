@@ -14,17 +14,6 @@ interface Message {
   text: string;
 }
 
-interface ApiResponse {
-  success: boolean;
-  message?: string;
-  data?: {
-    id: string;
-    fullName: string;
-    email: string;
-    submittedAt: string;
-  };
-}
-
 function CareerApply() {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -70,63 +59,65 @@ function CareerApply() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage({ type: "", text: "" });
+  e.preventDefault();
+  setLoading(true);
+  setMessage({ type: "", text: "" });
 
-    // Create FormData object for file upload
-    const data = new FormData();
-    data.append('fullName', formData.fullName);
-    data.append('email', formData.email);
-    data.append('phone', formData.phone);
-    if (formData.cv) {
-      data.append('cv', formData.cv);
-    }
+  const data = new FormData();
+  data.append('fullName', formData.fullName);
+  data.append('email', formData.email);
+  data.append('phone', formData.phone);
+  if (formData.cv) {
+    data.append('cv', formData.cv);
+  }
 
-    try {
-      console.log('📤 Sending application...'); // Debug log
-      
+  try {
+    console.log('📤 Sending application...');
+    
     const response = await fetch('http://localhost:5000/api/applications', {
       method: 'POST',
-      body: data,
-      mode: 'cors' // ← ضيف دي
+      body: data
     });
 
-      console.log('📥 Response status:', response.status); // Debug log
-      
-      const result: ApiResponse = await response.json();
-      console.log('📊 Response data:', result); // Debug log
+    console.log('📥 Response status:', response.status);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-      if (response.ok && result.success) {
-        setMessage({ 
-          type: "success", 
-          text: "Application submitted successfully! We'll contact you soon." 
-        });
-        
-        // Reset form
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          cv: null
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        setMessage({ 
-          type: "error", 
-          text: result.message || "Failed to submit application. Please try again." 
-        });
-      }
-    } catch (error) {
-      console.error('Error:', error);
+    const result = await response.json();
+    console.log('📊 Response data:', result);
+    
+    if (result.success) {
+      setMessage({ 
+        type: "success", 
+        text: "Application submitted successfully! We'll contact you soon." 
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        cv: null
+      });
+      (e.target as HTMLFormElement).reset();
+    } else {
       setMessage({ 
         type: "error", 
-        text: "Network error. Please check your connection and try again." 
+        text: result.message || "Failed to submit application." 
       });
-    } finally {
-      setLoading(false);
     }
-  };
+  } catch (error) {
+    console.error('🚨 Fetch error:', error);
+    setMessage({ 
+      type: "error", 
+      text: "Network error. Please check your connection and try again." 
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="career-apply-page">

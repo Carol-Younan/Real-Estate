@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import bg from '../assets/bg.jpg';
 import './Career.css';
 import CONFIG from '../Config';
@@ -18,6 +18,7 @@ function Career() {
   const [jobs, setjobs] = useState<VacancyData[]>([]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const navigate = useNavigate(); 
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     fetch(CONFIG.JOBS_URL) 
@@ -25,6 +26,22 @@ function Career() {
       .then((data) => setjobs(data))
       .catch((err) => console.error("Error loading projects:", err));
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (expandedIndex !== null) {
+        const clickedInsideCard = cardRefs.current[expandedIndex]?.contains(event.target as Node);
+        if (!clickedInsideCard) {
+          setExpandedIndex(null);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [expandedIndex]);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -58,6 +75,7 @@ function Career() {
           return (
             <div
               key={index}
+              ref={(el) => { cardRefs.current[index] = el; }}
               className="job-card"
               style={{
                 borderRadius: "16px",
