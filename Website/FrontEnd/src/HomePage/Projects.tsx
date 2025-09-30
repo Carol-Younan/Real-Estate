@@ -1,15 +1,24 @@
 import { useRef, useEffect, useState } from "react";
 import CONFIG from '../Config';
+import { useNavigate } from "react-router-dom";
 
 interface StatData {
   image: string;
   header: string;
 }
 
-function StatCard({ stat }: { stat: StatData }) {
+// إضافة خاصية onClick إلى الـ props
+interface StatCardProps {
+  stat: StatData;
+  onClick?: () => void; // جعلناها اختيارية
+}
+
+function StatCard({ stat, onClick }: StatCardProps) {
+  
   return (
     <div
       className="stat-card"
+      onClick={onClick} // إضافة onClick هنا
       style={{
         flex: "0 0 300px",
         borderRadius: "16px",
@@ -34,6 +43,7 @@ function StatCard({ stat }: { stat: StatData }) {
 
 export default function Projects() {
 
+  const navigate = useNavigate(); 
   const [stats, setStats] = useState<StatData[]>([]);
 
   const innerRef = useRef<HTMLDivElement>(null);
@@ -259,7 +269,11 @@ export default function Projects() {
             style={{ display: "flex", gap: 20, overflowX: "auto", scrollBehavior: "smooth", scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {repeatedStats.map((stat, index) => (
-              <StatCard key={`${stat.header}-${index}`} stat={stat} />
+              <StatCard 
+                key={`${stat.header}-${index}`} 
+                stat={stat} 
+                onClick={() => navigate(`/projects/${encodeURIComponent(stat.header)}`)} 
+              />
             ))}
           </div>
         </div>

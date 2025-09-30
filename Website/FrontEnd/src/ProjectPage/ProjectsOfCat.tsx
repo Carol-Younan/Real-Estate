@@ -1,31 +1,34 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './Projects.css';
-import bg from '../assets/bg.jpg';
-import CONFIG from '../Config';
-import { colors } from '@mui/material';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./Projects.css";
+import bg from "../assets/bg.jpg";
+import CONFIG from "../Config";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
+// ✅ Project type: images بدل image
 interface Project {
   id: number;
   name: string;
   info: string;
-  image: string;
+  images: string[];         // 👈 هنا array
   location?: string;
   category: string;
 }
-function ProjectsOfCat(){
-     const { categoryName } = useParams<{ categoryName: string }>();
+
+function ProjectsOfCat() {
+  const { categoryName } = useParams<{ categoryName: string }>();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch projects from JSON file
     fetch(CONFIG.PROJECTS_URL)
       .then((res) => res.json())
       .then((data) => {
-        // Filter projects by category
         const filteredProjects = categoryName
-          ? data.filter((project: Project) => 
+          ? data.filter((project: Project) =>
               project.category.toLowerCase() === categoryName.toLowerCase()
             )
           : data;
@@ -45,14 +48,20 @@ function ProjectsOfCat(){
       </div>
     );
   }
-return(
+
+  return (
     <div>
       {/* Hero Section */}
-      <div className="projects-hero" style={{ backgroundImage: `url(${bg})` }}>
+      <div
+        className="projects-hero"
+        style={{ backgroundImage: `url(${bg})` }}
+      >
         <div className="projects-hero-title">
-          <h1>{categoryName || 'All Projects'}</h1>
-          <p style={{color: "#0047AB"}}>Discover our exceptional construction projects</p>
-        </div> 
+          <h1>{categoryName || "All Projects"}</h1>
+          <p style={{ color: "#0047AB" }}>
+            Discover our exceptional construction projects
+          </p>
+        </div>
       </div>
 
       {/* Projects Grid */}
@@ -67,13 +76,28 @@ return(
             {projects.map((project) => (
               <div className="project-card" key={project.id}>
                 <div className="project-image-container">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="project-image"
-                  />
+                  {/* ✅ Swiper Slider */}
+                  <Swiper
+                    modules={[Navigation]}
+                    navigation
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    loop
+                    className="projects-swiper"   
+                  >
+                    {project.images.map((img, i) => (
+                      <SwiperSlide key={i}>
+                        <img
+                          src={img}
+                          alt={`${project.name}-${i}`}
+                          style={{ width: "100%", borderRadius: "10px" }}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                   <div className="project-image-overlay"></div>
                 </div>
+
                 <div className="project-content">
                   <h3 className="project-name">{project.name}</h3>
                   <p className="project-info">{project.info}</p>
@@ -87,6 +111,7 @@ return(
         )}
       </div>
     </div>
-)
+  );
 }
+
 export default ProjectsOfCat;
