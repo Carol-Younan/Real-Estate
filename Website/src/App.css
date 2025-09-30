@@ -5,12 +5,33 @@
 body {
   overflow-x: hidden;  
   overflow-y: auto;   
+  margin: 0;
+  padding: 0;
 }
 
-.logo{
+* {
+  box-sizing: border-box;
+}
+.page-content {
+  padding-top: 110px; /* Height of your navbar */
+}
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 70px; /* Shorter on mobile */
+  }
+}
+
+.logo {
   width: 100px;
   height: 100px;
-  margin-left: 100px;
+  margin-left: 20px; /* Smaller margin */
+}
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+  }
 }
 /* .logo-container {
   display: flex;

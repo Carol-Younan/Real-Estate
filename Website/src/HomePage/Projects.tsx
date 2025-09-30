@@ -43,7 +43,7 @@ export default function Projects() {
   const step = 320; 
 
   useEffect(() => {
-    fetch(CONFIG.PROJECTS_URL) 
+    fetch(CONFIG.CATEGORIES_URL) 
       .then((res) => res.json())
       .then((data) => setStats(data))
       .catch((err) => console.error("Error loading projects:", err));
@@ -119,20 +119,66 @@ export default function Projects() {
           transform: translateY(-5px);
           box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
-      `}</style>
+      
+          @media (max-width: 768px) {
+            .carousel-arrow {
+              width: 45px !important;
+              height: 45px !important;
+              font-size: 18px !important;
+            }
+            
+            .carousel-container {
+              padding: 0 60px !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .carousel-arrow {
+              width: 40px !important;
+              height: 40px !important;
+              font-size: 16px !important;
+            }
+            
+            .carousel-container {
+              padding: 0 50px !important;
+            }
+            
+            .stat-card {
+              flex: 0 0 250px !important;
+            }
+          }
+        `}</style>
 
-      <div style={{ width: "100%", paddingTop: "30px",paddingBottom:"100px", background: "linear-gradient(135deg,#f5f7fa,#c3cfe2)", position: "relative" }}>
-        <h2 style={{ textAlign: "center", fontSize: 40, fontWeight: "bold", color: "#2A3B9F" }}>
-          Projects
-        </h2>
+        <div style={{ 
+          width: "100%", 
+          paddingTop: "30px",
+          paddingBottom: "100px", 
+          background: "linear-gradient(135deg,#f5f7fa,#c3cfe2)", 
+          position: "relative" 
+        }}>
+          <h2 style={{ 
+            textAlign: "center", 
+            fontSize: "clamp(28px, 5vw, 40px)", // Responsive heading
+            fontWeight: "bold", 
+            color: "#2A3B9F",
+            padding: "0 20px" // Add padding on mobile
+          }}>
+            Projects
+          </h2>
 
-        <div 
-          style={{ position: "relative", overflow: "hidden", maxWidth: 1200, margin: "0 auto", padding: "0 80px" }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+          <div className="carousel-container" 
+            style={{ 
+              position: "relative", 
+              overflow: "hidden", 
+              maxWidth: 1200, 
+              margin: "0 auto", 
+              padding: "0 80px" // Keep desktop padding
+            }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
           {/* Left arrow */}
-          <button
+          <button className="carousel-arrow"
             onClick={() => scroll("left")}
             style={{
               position: "absolute",
@@ -169,7 +215,7 @@ export default function Projects() {
           </button>
 
           {/* Right arrow */}
-          <button
+          <button className="carousel-arrow"
             onClick={() => scroll("right")}
             style={{
               position: "absolute",

@@ -1,55 +1,202 @@
 * {
   box-sizing: border-box;
 }
+
+/* Hero Section - Similar to About */
 .CareerHead {
+  position: relative;
   width: 100%;
   height: 80vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .CareerHead img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
+  inset: 0;
+}
+
+.CareerHead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 71, 171, 0.3),
+    rgba(255, 255, 255, 0.9)
+  );
+  z-index: 1;
+}
+
+.career-hero-title {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: #0047AB;
+}
+
+.career-hero-title h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.career-hero-title .subtitle {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .CareerContent {
   max-width: 800px;
-  margin: 20px auto; 
+  margin: 60px auto 40px; 
   padding: 0 20px;
   text-align: center;
 }
 
 .CareerHeadText {
   color: #0047AB;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 10px;
 }
 
 .CareerContent h4 {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
   margin: 10px 0 5px;
   color: #0047AB;
 }
 
 .CareerContent p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.6;
   color: #444;
   margin-top: 0;
 }
 
-.job-card{
-  position: relative;
+.jobs-container {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  justify-content: center;   
+  gap: 60px;
+  padding: 20px;
 }
 
-.details-button{
+.job-card {
+  position: relative;
+  min-height: 300px;
+}
+
+.details-button {
   position: absolute;
   bottom: 20px;
+  left: 16px;
 }
 
-.Apply-button{
+.Apply-button {
   position: absolute;
   bottom: 20px;
   left: 140px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .career-hero-title h1 {
+    font-size: 3rem;
+  }
+
+  .career-hero-title .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .jobs-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 20px 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .CareerHead {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  .career-hero-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .career-hero-title .subtitle {
+    font-size: 1rem;
+  }
+
+  .jobs-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px 10px;
+  }
+
+  .job-card {
+    width: 100% !important;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .details-button {
+    left: 10px;
+    font-size: 0.9rem;
+    padding: 8px 10px !important;
+  }
+
+  .Apply-button {
+    left: auto;
+    right: 10px;
+    font-size: 0.9rem;
+    padding: 8px 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .CareerHead {
+    height: 50vh;
+    min-height: 250px;
+  }
+
+  .career-hero-title h1 {
+    font-size: 2rem;
+  }
+
+  .career-hero-title .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .CareerContent {
+    padding: 0 15px;
+  }
+
+  .jobs-container {
+    gap: 20px;
+    padding: 15px 10px;
+  }
+
+  .job-card {
+    max-width: 100%;
+  }
+
+  .details-button,
+  .Apply-button {
+    font-size: 0.85rem;
+    padding: 6px 8px !important;
+  }
+
+  .Apply-button {
+    right: 10px;
+  }
 }

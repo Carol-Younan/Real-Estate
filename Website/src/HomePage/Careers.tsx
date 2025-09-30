@@ -12,16 +12,19 @@ export default function Careers() {
 };
   return (
     
-    <section
-      style={{
-        position:"relative",
-        height:"500px",
-        backgroundImage: `url(${Img})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        padding: "80px 50px"
-      }}
-    >
+   <section
+  style={{
+    position: "relative",
+    minHeight: "500px",
+    backgroundImage: `url(${Img})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    padding: "80px 20px", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }}
+>
       <div className='the-overlay-card'
         style={{
           height:"auto",

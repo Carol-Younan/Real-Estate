@@ -1,12 +1,330 @@
 [
-  { "image":  "/Images/ConfSlider.jpg", "header": "Hotels & Resorts" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Administrative Buildings" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Real Estate" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Industrial Buildings" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Educational Institutes" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Golf Course, Marinas & Lagoons" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Sports & Entertainment" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Facilities" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Infrastructure, Landscape & Roads" },
-  { "image":  "/Images/ConfSlider.jpg", "header": "Retail" }
+  {
+    "id": 1,
+    "name": "Club Med Sinai Bay Hotel",
+    "info": "Turnkey construction of 385 guestrooms, main building & reception, 6 swimming pools, 7 restaurants, buffet & main bar, spa & diving center, 7 tennis playgrounds, mini golf area, mini football playground.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Taba, South Sinai",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 2,
+    "name": "Ancient Sands Golf Resort & Residences",
+    "info": "Luxury 5-star resort featuring 281 rooms and suites integrated with championship golf course facilities. Complete resort development including restaurants, pools, and spa facilities.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 3,
+    "name": "Steigenberger Golf Resort El Gouna",
+    "info": "Premium resort hotel with 375 rooms offering stunning views. Includes multiple restaurants, swimming pools, spa facilities, and direct golf course access.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 4,
+    "name": "The Cascades Golf & Spa Resort",
+    "info": "Exclusive resort with 205 rooms combining luxury accommodation with championship golf. Features fine dining, wellness facilities, and private beach access.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Soma Bay, Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 5,
+    "name": "Movenpick Resort El Quseir",
+    "info": "Beachfront resort featuring 250 rooms with private beach, multiple pools, restaurants, diving center, and spa facilities. Complete resort infrastructure.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Quseir, Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 6,
+    "name": "Casa Cook Hotel",
+    "info": "Boutique lifestyle hotel with 13 suites, restaurant, swimming pool, and service buildings. Modern architectural design with premium finishes.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 7,
+    "name": "Hotel Renovation Project",
+    "info": "Complete renovation of 66 rooms & 16 suites, 3 restaurants & 1 bar, 2 swimming pools, fitness center, spa & private beach facilities.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Red Sea",
+    "category": "Hotels & Resorts"
+  },
+  {
+    "id": 8,
+    "name": "Ministry of Foreign Affairs",
+    "info": "Modern government complex in New Administrative Capital featuring advanced security systems, conference facilities, and sustainable design for ministerial operations.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "New Administrative Capital",
+    "category": "Administrative Buildings"
+  },
+  {
+    "id": 9,
+    "name": "Government Administrative Complex",
+    "info": "Large-scale ministerial buildings accommodating multiple departments with smart building technology and energy-efficient systems.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "New Administrative Capital",
+    "category": "Administrative Buildings"
+  },
+  {
+    "id": 10,
+    "name": "Corporate Headquarters",
+    "info": "Modern office complex with 20,000 sqm of premium office space, conference centers, parking facilities, and landscaped grounds.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Cairo",
+    "category": "Administrative Buildings"
+  },
+  {
+    "id": 11,
+    "name": "O West Residential Development",
+    "info": "Modern residential community with 4,200 units across 420 hectares. Features contemporary villas, townhouses, and apartments with full amenities including clubhouse and commercial area.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "6th October City",
+    "category": "Real Estate"
+  },
+  {
+    "id": 12,
+    "name": "Taba Heights Villas",
+    "info": "Luxury hillside villas offering breathtaking Red Sea views. 150 units with private pools, gardens, and access to beach club facilities.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Taba Heights",
+    "category": "Real Estate"
+  },
+  {
+    "id": 13,
+    "name": "El Gouna Residential Units",
+    "info": "Premium apartments and villas development with 500+ units. Modern architecture with full resort amenities and marina access.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Real Estate"
+  },
+  {
+    "id": 14,
+    "name": "Makadi Heights Residences",
+    "info": "Residential compound featuring townhouses and apartments with golf course views. Complete with community pools, parks, and retail area.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Makadi Bay, Red Sea",
+    "category": "Real Estate"
+  },
+  {
+    "id": 15,
+    "name": "Industrial Park Facilities",
+    "info": "Purpose-built industrial facilities with warehouses, production units, and logistics centers spanning 50,000 sqm. Built to international standards.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "6th October City",
+    "category": "Industrial Buildings"
+  },
+  {
+    "id": 16,
+    "name": "Manufacturing Complex",
+    "info": "Modern manufacturing facility with advanced production lines, quality control labs, storage facilities, and administrative offices.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "10th of Ramadan City",
+    "category": "Industrial Buildings"
+  },
+  {
+    "id": 17,
+    "name": "Logistics & Distribution Center",
+    "info": "Strategic logistics hub with 40,000 sqm warehouse space, loading docks, modern inventory management systems, and truck parking.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Ain Sokhna",
+    "category": "Industrial Buildings"
+  },
+  {
+    "id": 18,
+    "name": "El Gouna International School",
+    "info": "Premium international school facility for 1,000+ students. Modern classrooms, science labs, sports facilities, performing arts center, and swimming pool.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Educational Institutes"
+  },
+  {
+    "id": 19,
+    "name": "Berlin British School",
+    "info": "State-of-the-art educational campus following British curriculum. Capacity for 800 students with advanced learning facilities, sports grounds, and auditorium.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Educational Institutes"
+  },
+  {
+    "id": 20,
+    "name": "University Campus",
+    "info": "Complete university campus development including lecture halls, laboratories, library, student housing, sports facilities, and administrative buildings.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "New Cairo",
+    "category": "Educational Institutes"
+  },
+  {
+    "id": 21,
+    "name": "El Gouna Golf Club",
+    "info": "Championship 18-hole golf course designed by Gene Bates and Fred Couples. Features stunning desert landscape with premium clubhouse, pro shop, and dining facilities.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Golf Course, Marinas & Lagoons"
+  },
+  {
+    "id": 22,
+    "name": "The Cascades Golf Course",
+    "info": "Award-winning 18-hole championship course designed by Gary Player. Challenging layout with spectacular views of the Red Sea mountains and comprehensive facilities.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Soma Bay, Red Sea",
+    "category": "Golf Course, Marinas & Lagoons"
+  },
+  {
+    "id": 23,
+    "name": "El Gouna Marina",
+    "info": "State-of-the-art marina development with 200+ berths accommodating vessels up to 40 meters. Complete with clubhouse, retail, restaurants, and fine dining.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Golf Course, Marinas & Lagoons"
+  },
+  {
+    "id": 24,
+    "name": "Abu Tig Marina",
+    "info": "Iconic marina featuring 100 berths, waterfront promenade, restaurants, shops, and entertainment venues. The heart of El Gouna's vibrant lifestyle.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Golf Course, Marinas & Lagoons"
+  },
+  {
+    "id": 25,
+    "name": "Lagoon Development",
+    "info": "Artificial lagoon creation with crystal-clear water, sandy beaches, water sports facilities, and surrounding landscape development.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Red Sea",
+    "category": "Golf Course, Marinas & Lagoons"
+  },
+  {
+    "id": 26,
+    "name": "Sports Complex",
+    "info": "Multi-sport facility including tennis courts, football fields, basketball courts, swimming pools, fitness center, and sports academy buildings.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Sports & Entertainment"
+  },
+  {
+    "id": 27,
+    "name": "Entertainment Center",
+    "info": "Modern entertainment venue with cinema complex, bowling alley, arcade games, restaurants, and event spaces for 2,000+ guests.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Cairo",
+    "category": "Sports & Entertainment"
+  },
+  {
+    "id": 28,
+    "name": "Stadium Development",
+    "info": "Professional sports stadium with 10,000 seating capacity, training facilities, locker rooms, VIP areas, and press center.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "New Cairo",
+    "category": "Sports & Entertainment"
+  },
+  {
+    "id": 29,
+    "name": "Hospital Facilities",
+    "info": "Modern medical facility with 150 beds, emergency department, operating theaters, ICU, diagnostic centers, and outpatient clinics.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Facilities"
+  },
+  {
+    "id": 30,
+    "name": "Desalination Plant",
+    "info": "Water desalination facility producing 20,000 m³/day of potable water. Includes treatment systems, storage tanks, and distribution networks.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Facilities"
+  },
+  {
+    "id": 31,
+    "name": "Sewage Treatment Plant",
+    "info": "Advanced wastewater treatment facility processing 15,000 m³/day. Includes biological treatment, tertiary filtration, and treated water reuse for irrigation.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Red Sea",
+    "category": "Facilities"
+  },
+  {
+    "id": 32,
+    "name": "Power Station",
+    "info": "Electrical power generation facility with 50MW capacity, substations, and distribution infrastructure serving entire development.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Red Sea",
+    "category": "Facilities"
+  },
+  {
+    "id": 33,
+    "name": "Water Tank Network",
+    "info": "Comprehensive water storage system with elevated and ground tanks totaling 50,000 m³ capacity. Includes pumping stations and distribution networks.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Facilities"
+  },
+  {
+    "id": 34,
+    "name": "El Gouna Roads Network",
+    "info": "Complete road infrastructure including 100km of paved roads, bridges, roundabouts, street lighting, and traffic management systems.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Infrastructure, Landscape & Roads"
+  },
+  {
+    "id": 35,
+    "name": "O West Infrastructure",
+    "info": "Comprehensive infrastructure for new city including roads, water networks, electricity grid, telecommunications, and drainage systems.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "6th October City",
+    "category": "Infrastructure, Landscape & Roads"
+  },
+  {
+    "id": 36,
+    "name": "Makadi Heights Roads & Utilities",
+    "info": "Major infrastructure project including highway construction, internal road network, utility corridors, and drainage systems for 10,000+ units.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Makadi Bay, Red Sea",
+    "category": "Infrastructure, Landscape & Roads"
+  },
+  {
+    "id": 37,
+    "name": "Landscape Development",
+    "info": "Extensive landscaping including parks, green spaces, irrigation systems, hardscape elements, and plant installation across resort areas.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Red Sea",
+    "category": "Infrastructure, Landscape & Roads"
+  },
+  {
+    "id": 38,
+    "name": "Bridge Construction",
+    "info": "Multi-lane bridge construction connecting major developments. Features modern design, pedestrian walkways, and advanced safety systems.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Egypt",
+    "category": "Infrastructure, Landscape & Roads"
+  },
+  {
+    "id": 39,
+    "name": "Shopping Mall",
+    "info": "Modern retail complex with 150+ stores, food court, cinema, entertainment zone, and 2,000 parking spaces across 80,000 sqm.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "Cairo",
+    "category": "Retail"
+  },
+  {
+    "id": 40,
+    "name": "Retail Promenade",
+    "info": "Waterfront retail development with 50 shops, restaurants, cafes, and entertainment venues. Features open-air design and marina views.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "El Gouna, Red Sea",
+    "category": "Retail"
+  },
+  {
+    "id": 41,
+    "name": "Commercial Center",
+    "info": "Mixed-use retail development combining shops, offices, and F&B outlets. Total area 25,000 sqm with modern amenities and ample parking.",
+    "image": "/Images/AliPacha.jpg",
+    "location": "New Cairo",
+    "category": "Retail"
+  }
 ]

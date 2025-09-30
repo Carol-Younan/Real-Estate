@@ -115,20 +115,21 @@
   color: #666;
 }
 
-/* Values Grid - ثابتة جنب بعض */
+/* Values Grid - Responsive */
 .values-grid {
   display: flex;
-  justify-content: space-between; /* يوزعهم جنب بعض */
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap;  /* يفضلوا صف واحد */
+  gap: 30px;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 
 /* Card Container */
 .value-card {
-  flex: 1;                /* الكروت تتوزع بنفس العرض */
-  max-width: 200px;       /* حجم ثابت نسبي */
+  flex: 0 1 200px;
+  min-width: 180px;
+  max-width: 200px;
   height: 200px;
   perspective: 1000px;
 }
@@ -179,6 +180,7 @@
 .value-card-back h3 {
   color: #0047AB;
   margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .value-card-back p {
@@ -223,22 +225,6 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .about-hero h1 {
-    font-size: 2.5rem;
-  }
-  .about-history-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .vision-mission-grid {
-    grid-template-columns: 1fr;
-  }
-  .stats-section {
-    grid-template-columns: 1fr;
-  }
-}
 /* Awards Section */
 .awards-grid {
   display: grid;
@@ -271,4 +257,147 @@
   font-size: 0.95rem;
   color: #444;
   font-weight: 500;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .about-hero h1 {
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .values-grid {
+    gap: 25px;
+  }
+  
+  .value-card {
+    flex: 0 1 180px;
+    min-width: 160px;
+    max-width: 180px;
+    height: 180px;
+  }
+  
+  .value-card-front {
+    font-size: 1.1rem;
+  }
+  
+  .value-card-back h3 {
+    font-size: 1rem;
+  }
+  
+  .value-card-back p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh;
+    margin-bottom: 60px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .about-section {
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .about-history-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .value-card {
+    flex: 0 1 160px;
+    min-width: 150px;
+    max-width: 160px;
+    height: 160px;
+  }
+  
+  .value-card-front {
+    font-size: 1rem;
+    padding: 15px;
+  }
+  
+  .value-card-back {
+    padding: 15px;
+  }
+  
+  .value-card-back h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  
+  .value-card-back p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-hero {
+    height: 50vh;
+  }
+  
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .values-grid {
+    gap: 15px;
+  }
+  
+  .value-card {
+    flex: 0 1 140px;
+    min-width: 130px;
+    max-width: 140px;
+    height: 140px;
+  }
+  
+  .value-card-front {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  
+  .value-card-back {
+    padding: 12px;
+  }
+  
+  .value-card-back h3 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+  
+  .value-card-back p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
 }

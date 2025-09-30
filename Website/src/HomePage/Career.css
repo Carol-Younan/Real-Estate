@@ -1,11 +1,51 @@
-.the-overlay-card {    /* center horizontally */
+.the-overlay-card {
   position: absolute;
-  top:25%;
-  left:25%;
-  background: rgba(0, 0, 0, 0.8); /* semi-transparent white */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
   padding: 20px 30px;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 2;
+  max-width: 90%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 10px; 
+}
+
+@media (max-width: 768px) {
+  .the-overlay-card {
+    padding: 15px 20px;
+    max-width: calc(100% - 30px); 
+    margin: 0 15px;
+  }
+  
+  .the-overlay-card h2 {
+    font-size: 28px !important;
+  }
+  
+  .the-overlay-card p {
+    font-size: 16px !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .the-overlay-card {
+    padding: 12px 15px;
+    max-width: calc(100% - 20px); 
+    margin: 0 10px;
+  }
+  
+  .the-overlay-card h2 {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .the-overlay-card p {
+    font-size: 14px !important;
+    margin-bottom: 25px !important;
+  }
 }

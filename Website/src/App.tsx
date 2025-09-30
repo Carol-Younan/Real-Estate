@@ -7,6 +7,9 @@ import About from './AboutPage/About';
 import Footer from './Footer';
 import Career from './CareerPage/Career';
 import Categories from './ProjectPage/Categories';
+import Project from './ProjectPage/ProjectsOfCat';
+import CareerApply from './CareerPage/CareerApply';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -25,12 +28,15 @@ function App() {
     <>
     {/* <div ref={topRef}></div> */}
     <BrowserRouter>
+      <ScrollToTop/>
       <Nav onContactClick={handleContactClick} />
       <Routes>
         <Route path='/' element= {<Home/>} />
         <Route path='/about' element= {<About/>} />
         <Route path='/career' element= {<Career/>} />
+        <Route path="/career/apply" element={<CareerApply />} />
         <Route path='/projects' element= {<Categories/>} />
+        <Route path="/projects/:categoryName" element={<Project />} />
       </Routes>
     </BrowserRouter>
     <Footer ref={footerRef} />
