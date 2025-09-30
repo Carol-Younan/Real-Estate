@@ -8,15 +8,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-// ✅ Project type: images بدل image
 interface Project {
   id: number;
   name: string;
   info: string;
-  images: string[];         // 👈 هنا array
+  images: string[];        
   location?: string;
   category: string;
 }
+
+const LocationIcon = () => (
+  <svg className="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </svg>
+);
 
 function ProjectsOfCat() {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -101,8 +106,13 @@ function ProjectsOfCat() {
                 <div className="project-content">
                   <h3 className="project-name">{project.name}</h3>
                   <p className="project-info">{project.info}</p>
+                  
+                  {/* ✅ Location مع الأيقونة */}
                   {project.location && (
-                    <div className="project-location">{project.location}</div>
+                    <div className="project-location">
+                      <LocationIcon />
+                      <span>{project.location}</span>
+                    </div>
                   )}
                 </div>
               </div>
