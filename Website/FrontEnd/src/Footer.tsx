@@ -1,7 +1,7 @@
 // Footer.tsx
 import React from "react";
 import "./Footer.css";
-import Thelogo from './assets/red_sea_construction_logo-removebg-preview.png';
+import Thelogo from './assets/realEstate-removebg-preview.png';
 import { useNavigate } from "react-router-dom";
 
 const EmailIcon = () => (
@@ -47,7 +47,7 @@ const Footer = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
                 />
               </div>
               <div className="company-name">
-                <h4>Red Sea Construction</h4>
+                <h4>Real Estate Construction</h4>
                 <span>Building Excellence Since 1998</span>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Footer = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
             <div className="contact-info">
               <div className="contact-item">
                 <EmailIcon />
-                <span>info@redseaconstruction.com</span>
+                <span>info@realestateconstruction.com</span>
               </div>
               <div className="contact-item">
                 <PhoneIcon />

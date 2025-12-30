@@ -51,7 +51,7 @@ export default function Careers() {
             marginBottom: "50px",
           }}
         >
-          Join RSC and be part of shaping Egypt’s future infrastructure and
+          Join RS and be part of shaping Egypt’s future infrastructure and
           construction projects.
         </p>
 

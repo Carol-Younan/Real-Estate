@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Logo from './assets/red_sea_construction_logo-removebg-preview.png'
+import Logo from './assets/realEstate-removebg-preview.png';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
