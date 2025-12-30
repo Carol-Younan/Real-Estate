@@ -29,12 +29,12 @@ const About: React.FC = () => {
             <p>
               For more than 25 years, the Construction sector of Orascom
               Development carried out in-house construction works across all its
-              projects in Egypt and abroad. In 2010, Red Sea Construction was
+              projects in Egypt and abroad. In 2010, Real Estate Construction was
               established as a standalone entity to handle Orascom Development's
               construction projects and expand into the open market.
             </p>
             <p>
-              With over 1,500 highly trained staff, Red Sea Construction has
+              With over 1,500 highly trained staff, Real Estate Construction has
               delivered landmark hotels, marinas, real estate, educational
               institutions, medical centers, golf courses, ministerial
               buildings, and major infrastructure projects in Egypt, Oman,

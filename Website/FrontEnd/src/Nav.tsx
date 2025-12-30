@@ -87,7 +87,7 @@ export default function DrawerAppBar(props: Props) {
             className='logo' 
             src={Logo} 
             onClick={() => handleNavClick("Home", "/")} 
-            alt="Red Sea Construction" 
+            alt="Real Estate Construction" 
             style={{
               cursor: "pointer", 
               height: scrolled ? "60px" : "100px",

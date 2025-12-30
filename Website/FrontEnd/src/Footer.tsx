@@ -41,7 +41,7 @@ const Footer = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
                 <img 
                   src={Thelogo}
                   onClick={() => handleFooterClick("Home", "/")} 
-                  alt="Red Sea Construction" 
+                  alt="Real Estate Construction" 
                   className="company-logo"
                   style={{ cursor: 'pointer' }}
                 />
@@ -120,7 +120,7 @@ const Footer = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
         </div>
         
         <div className="copy">
-          © {currentYear} Red Sea Construction. All rights reserved. | Building the future, today.
+          © {currentYear} Real Estate Construction. All rights reserved. | Building the future, today.
         </div>
       </footer>
     </div>
