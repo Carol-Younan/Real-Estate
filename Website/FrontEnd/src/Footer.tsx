@@ -62,7 +62,7 @@ const Footer = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               </div>
               <div className="contact-item">
                 <PhoneIcon />
-                <span>+20 2 1234 5678</span>
+                <span>+20 120 155 4651</span>
               </div>
               <div className="contact-item">
                 <LocationIcon />
